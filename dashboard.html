@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .box button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .box button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden-content {
+      display: none;
+      margin-top: 10px;
+      background-color: #eef;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+  <style>
+    .box img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+  </style>
+  .hidden-content {
+      display: none;
+    }
+    <script>
+function showContent(button) {
+  const box = button.closest('.box');
+  const content = box.querySelector('.hidden-content');
+  const backButton = box.querySelector('.back-button');
+
+  content.style.display = 'block';
+  button.style.display = 'none';
+  backButton.style.display = 'inline-block';
+}
+
+function hideContent(button) {
+  const box = button.closest('.box');
+  const content = box.querySelector('.hidden-content');
+  const viewButton = box.querySelector('button[onclick="showContent(this)"]');
+
+  content.style.display = 'none';
+  button.style.display = 'none';
+  viewButton.style.display = 'inline-block';
+}
+</script>
+
+</head>
+<body>
+    
+  <h1>Ճագարաբուծություն</h1>
+    <p>Ճագարաբուծությունը անասնաբուծության նոր և հեռանկարային ճյուղերից մեկն է։ Շնորհիվ բարձրացման բարձր ինտենսիվության և վաղահասունության, համեմատաբար կարճ ժամանակաընթացքում ճագարներից կարելի է ստանալ զգալի քանակությամբ դյուրամարս միս, բարձրորակ մորթեղեն և աղվամազ։ Բացի այդ, ճագարները որպես լաբորատոր կենդանիներ, լայնորեն օգտագործվում են գիտահետազոտական ինստիտուտներում։ Նրանք հումք են տալիս կենսաբանական արդյունաբերությանը տարբեր վակցինաներ պատրաստելու համար։
+Վերջին տասնամյակում ճագարաբուծության զարգացումը մեծ վերելք է ապրում պետական և կոլեկտիվ տնտեսություններում, ստեղծվում են արդյունաբերական տիպի խոշոր ճագարաբուծական համալիրներ, արդյունաբերական ձեռնարկություններին կից կազմակերպվում են օժանդակ ճագարաբուծական տնտեսություններ, ավելանում է բնակչության անձնական օժանդակ տնտեսությունների ճագարների գլխաքանակը։
+Ճագարաբուծությունը ժամանակակից եղանակներով և մեթոդներով վարելու համար ճագարաբույծներին պետք են գիտելիքներ կենդանիների կենսաբանական առանձնահատկությունների, վերարտադրության, բուծման, կերակրման, տոհմային աշխատանքների կազմակերպման, արդյունաբերական տիպի ճագարանոցների նորագույն տեխնոլոգիայի ներդրման, ճագարաբուծությունից ստացվող մթերքների ստանդարտ և նախնական մշակման եղանակների, ճագարների հիվանդությունների, նրանց նախապահպանության վերաբերյալ։ </p>
+  <div class="grid-container">
+    <div class="box">
+      <img src="image/napastakneri_patmutyun.png" alt="Ներբեռնվում է․․․">
+      <h3>Ճագարաբուծության ներածություն և պատմություն</h3>
+      <button onclick="showContent(this)">Նայել ⬇</button>
+      <button class="back-button" style="display:none;" onclick="hideContent(this)">Վերադառնալ ⬆</button>
+      <div class="hidden-content">
+        <p>Ճագարաբուծությունը (rabbit breeding — ճագարների բուծում) գյուղատնտեսության այն ճյուղն է, որը զբաղվում է ճագարների պահմամբ, բազմացմամբ և օգտագործմամբ սննդի, մորթու, բրդի կամ կենսաբանական նպատակներով։ Այն համարվում է արդյունավետ և շահավետ զբաղմունք՝ հատկապես փոքր տնտեսությունների և ընտանեկան ֆերմաների համար։
+        Ճագարները հայտնի են իրենց արագ բազմացման ունակությամբ, համեմատաբար փոքր տարածք պահանջելով և սննդի նկատմամբ համեստ պահանջներով։ Բացի այդ, ճագարի միսը համարվում է դիետիկ, բարձր սպիտակուցային և ցածր ճարպային սնունդ։</p>
+        <ul>
+            <li><h4>Հին ժամանակներ</h4><p>Ճագարները հայտնի էին դեռևս հռոմեացիների շրջանում։ Նրանք առաջիններից էին, որ սկսեցին ճագարներ պահել փակ տարածքներում՝ մսի համար։</p></li>
+            <li><h4>Միջնադար</h4><p>Եվրոպայում ճագարաբուծությունը տարածվեց վանքերում, որտեղ միսը օգտագործվում էր որպես «բուսական» սնունդ պահքի ժամանակ՝ քանի որ ճագարը համարվում էր ջրային կենդանի։</p></li>
+            <li><h4>19–20-րդ դարեր</h4><p>Ճագարաբուծությունը սկսեց զարգանալ որպես առանձին գյուղատնտեսական ճյուղ։ Բուծվում էին տարբեր ցեղատեսակներ՝ մսի, մորթու և ցուցադրական նպատակներով։</p></li>
+            <li><h4>Հայաստանում</h4><p>Ճագարաբուծությունը Հայաստանում ունի համեստ, բայց կայուն զարգացում։ Տնային տնտեսություններում այն հաճախ օգտագործվում է որպես լրացուցիչ եկամտի աղբյուր։ Վերջին տարիներին աճել է հետաքրքրությունը ցեղային բուծման և օրգանական մսի արտադրության նկատմամբ։</p></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="grid-container">
+    <div class="box">
+      <img src="image/napastakneri_hivandutyunner.png" alt="Ներբեռնվում է․․․">
+      <h3>Ճագարների հիվանդություններ և կանխարգելում</h3>
+      <button onclick="showContent(this)">Նայել ⬇</button>
+      <button class="back-button" style="display:none;" onclick="hideContent(this)">Վերադառնալ ⬆</button>
+      <div class="hidden-content">
+        <p>Ճագարները, ինչպես բոլոր կենդանիները, կարող են տառապել տարբեր հիվանդություններով։ Ճիշտ խնամքը, մաքրությունը և սննդակարգը կարող են զգալիորեն նվազեցնել հիվանդությունների ռիսկը։</p>
+        <ul>
+            <li><h4></h4><p></p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game3.jpg" alt="Խաղ 3">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 3-ի բովանդակությունը։</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game4.jpg" alt="Խաղ 4">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 4-ի բովանդակությունը։</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game5.jpg" alt="Խաղ 5">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 5-ի բովանդակությունը։</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game6.jpg" alt="Խաղ 6">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 6-ի բովանդակությունը։</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game7.jpg" alt="Խաղ 7">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 7-ի բովանդակությունը։</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game8.jpg" alt="Խաղ 8">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 8-ի բովանդակությունը։</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="game9.jpg" alt="Խաղ 9">
+      <button onclick="showContent(this)">Մուտք</button>
+      <div class="hidden-content">
+        <p>Սա է Խաղ 9-ի բովանդակությունը։</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showContent(button) {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+  <script>
+  function showContent(button) {
+    const box = button.parentElement;
+    const content = box.querySelector(".hidden-content");
+    const backButton = box.querySelector(".back-button");
+
+    content.style.display = "block";
+    button.style.display = "none";
+    backButton.style.display = "inline-block";
+  }
+
+  function hideContent(button) {
+    const box = button.parentElement;
+    const content = box.querySelector(".hidden-content");
+    const viewButton = box.querySelector("button:not(.back-button)");
+
+    content.style.display = "none";
+    button.style.display = "none";
+    viewButton.style.display = "inline-block";
+  }
+</script>
+</body>
+</html>
