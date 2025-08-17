@@ -66,5 +66,14 @@ button:hover {
       <button type="submit">Գրանցվել</button>
     </form>
   </div>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const isLogged = params.get("logged");
+
+  if (isLogged === "true") {
+    console.log("Օգտատերը մուտք է գործել");
+    // Այստեղ կարող ես ցույց տալ հատուկ greeting, կամ թաքնված բովանդակություն
+  }
+  </script>
 </body>
 </html>
