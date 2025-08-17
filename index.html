@@ -2,10 +2,50 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>CHICKBUNNY</title>
+  <title>GreenHouse — որտեղ գաղափարները աճում են ազատորեն</title>
   <style>
     body {
-      background-color: #f9f9f9;
+      font-family: sans-serif;
+    }
+    .navbar {
+      background-color: #3caa6c;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      color: white;
+    }
+    .navbar a:hover {
+      color: white;
+      margin-right: 15px;
+      text-decoration: underline;
+    }
+    .section {
+      display: none;
+      padding: 60px 20px 20px;
+      background-color: #f0fff0;
+      border-radius: 8px;
+
+    }
+  </style>
+  <style>
+    #content {
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+
+    }
+    a {
+      cursor: pointer;
+      color: rgb(1, 68, 29);
+      text-decoration: underline;
+    }
+  </style>
+  <style>
+    body {
+      background-color: #f0fff0;
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 80px;
@@ -14,7 +54,7 @@
     .link-box {
       display: inline-block;
       background-color: #fff;
-      border: 2px solid #ff69b4;
+      border: 2px solid #2e8b57;
       padding: 20px 40px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -23,29 +63,149 @@
 
     .link-box a {
       text-decoration: none;
-      color: #ff1493;
+      color: #2e8b57;
       font-size: 24px;
       font-weight: bold;
     }
 
     .link-box a:hover {
-      color: #c71585;
+    color: #c71585;
     }
 
-    .bunny {
-      font-size: 48px;
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      animation: hop 1.5s infinite;
-    }
+    /* Welcome Banner */
+.welcome-banner {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  animation: fadeInText 2s ease-in forwards;
+}
 
-    @keyframes hop {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-15px); }
-      100% { transform: translateY(0); }
-    }
+.welcome-path {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2e8b57;
+  animation: welcomeMotion 3s ease-out forwards;
+}
+
+.welcome-sub {
+  font-size: 24px;
+  color: #2e8b57;
+  opacity: 0;
+  animation: fadeInSub 2s ease-out 2.5s forwards;
+}
+
+/* GreenHouse Logo */
+.greenhouse-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.house-outline {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #2e8b57;
+  border-radius: 12px;
+  position: relative;
+  animation: bounceHouse 2s infinite ease-in-out;
+}
+
+.plant {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: growPlant 2s ease-out forwards;
+}
+
+.leaf {
+  width: 20px;
+  height: 30px;
+  background-color: #2e8b57;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.leaf-big:nth-child(1) {
+  left: -25px;
+  animation: leafGrow 1.2s 0.3s forwards;
+}
+.leaf-big:nth-child(2) {
+  left: 5px;
+  animation: leafGrow 1.2s 0.6s forwards;
+}
+.leaf-small:nth-child(3) {
+  left: -10px;
+  top: -20px;
+  width: 14px;
+  height: 20px;
+  animation: leafGrow 1.2s 0.9s forwards;
+}
+.leaf-small:nth-child(4) {
+  left: 20px;
+  top: -20px;
+  width: 14px;
+  height: 20px;
+  animation: leafGrow 1.2s 1.2s forwards;
+}
+
+.soil {
+  width: 40px;
+  height: 10px;
+  background-color: #654321;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  color: #2e8b57;
+  margin-top: 12px;
+  animation: fadeInText 2s ease-in forwards;
+}
+
+/* Animations */
+@keyframes welcomeMotion {
+  0%   { transform: translateX(-150px); opacity: 0; }
+  30%  { transform: translateX(0); opacity: 1; }
+  60%  { transform: translateX(50px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeInSub {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growPlant {
+  0%   { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes leafGrow {
+  0%   { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceHouse {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes fadeInText {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
   </style>
+  
   <style>
     body {
       background-color: #f9f9f9;
@@ -74,9 +234,72 @@
       color: #c71585;
     }
   </style>
-  <a href="https://www.chickbunny.am">www.chickbunny.am</a>
 </head>
 <body>
+  <div class="welcome-banner">
+  <div class="welcome-path">WELCOME</div>
+  <div class="welcome-sub">to</div>
+</div>
+
+<div class="greenhouse-logo">
+  <div class="house-outline">
+    <div class="plant">
+      <div class="leaf leaf-big"></div>
+      <div class="leaf leaf-big"></div>
+      <div class="leaf leaf-small"></div>
+      <div class="leaf leaf-small"></div>
+      <div class="soil"></div>
+    </div>
+  </div>
+  <div class="logo-text">GreenHouse</div>
+</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const isLogged = params.get("logged");
+
+    if (isLogged === "true") {
+      document.body.innerHTML += "<p>Բարի գալուստ, դու մուտք ես գործել։</p>";
+    } else {
+      document.body.innerHTML += "<p>Դու մուտք չես գործել։</p>";
+    }
+  </script>
+  <div class="navbar">
+    <a href="#home" onclick="navigate('home')">Գլխավոր</a>
+    <a href="#about" onclick="navigate('about')">Մեր մասին</a>
+    <a href="#contact" onclick="navigate('contact')">Կապ</a>
+    <a href="#login" onclick="navigate('login')">Մուտք</a>
+  </div>
+
+  <div id="home" class="section">Բարի գալուստ մեր կայք։</div>
+  <div id="about" class="section">Մենք զբաղվում ենք վեբ ծրագրավորմամբ։</div>
+  <div id="contact" class="section">Կապ հաստատելու համար գրեք մեզ։</div>
+  <div id="login" class="section">Մուտք գործելու ձևը դեռ մշակվում է :)</div>
+
+  <script>
+    function navigate(id) {
+      event.preventDefault();
+      window.location.hash = id;
+      showSection(id);
+    }
+
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(s => s.style.display = 'none');
+      const target = document.getElementById(id);
+      if (target) target.style.display = 'block';
+    }
+
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.substring(1);
+      showSection(hash || 'home');
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.substring(1);
+      showSection(hash);
+    });
+  </script>
   <h1>Բարի գալուստ մեր ֆերմա</h1>
   <p id="verev">Մենք ստեղծել ենք մի անկյուն, որտեղ յուրաքանչյուր ճտի խնամքը և յուրաքանչյուր մանրուքը կարևոր է։ Այստեղ կենդանիներն աճում են սիրով, բնությունը՝ հարգանքով, իսկ որակը՝ վստահությամբ։
   Բարի գալուստ մի աշխարհ, որտեղ գյուղատնտեսությունն ու հոգատարությունը միաձուլվում են՝ տալով մաքուր, կայուն և անկեղծ արդյունք։</p>
@@ -86,13 +309,42 @@
     <h2>Ճագարաբուծության մասին տեղեկությություններ</h2>
     <p>Մենք հնարավորություն են տալիս մուտք գործել կենդանիների աշխարհ՝ կապելով երիտասարդներին և համայնքներին գեղարվեստական ​​​​գործունեության հետ:</p>
 </p>
-<a href="dashboard.html">
-  <button>Մուտք</button>
-</a>
+  <a href="dashboard.html?logged=true">
+  <button>Իմանալ ավելին</button>
+  </a>
+  <h2>Ընտրիր բովանդակությունը</h2>
+<nav>
+  <a href="index.html?logged=true">Գլխավոր</a>
+  <a href="about.html">Մեր մասին</a>
+  <a href="contact.html">Կապ</a>
+  <a href="blog/index.html">Բլոգ</a>
+  <a href="form.html">Մուտք</a>
+</nav>
+
+  <div id="content">
+    Բարի գալուստ մեր կայք։
+  </div>
+
+  <script>
+    function showContent(section) {
+      const contentDiv = document.getElementById('content');
+      if (section === 'home') {
+        contentDiv.innerHTML = 'Սա է գլխավոր էջի բովանդակությունը։';
+      } else if (section === 'about') {
+        contentDiv.innerHTML = 'Սա է "Մեր մասին" բաժնի բովանդակությունը։';
+      } else if (section === 'contact') {
+        contentDiv.innerHTML = 'Կապ հաստատելու համար գրեք մեզ։';
+      }
+    }
+  </script>
   <p>Կարող եք մեզ հետ կապ հաստատել հետևյալ ծրագրերում՝ 
-    <p><input type="image" src="image/telegram.jpg" name="imgbutton" width="20"><a href="https://t.me/GorMnatsakanyan22" target="_blank">Կապ հաստատել Telegram-ով</a></p>
+    <p><img src="image/telegram.jpg" alt="Telegram" width="50"><a href="https://t.me/GorMnatsakanyan22" target="_blank">Կապ հաստատել Telegram-ով</a></p>
     <p><input type="image" src="image/heraxos.jpg" name="imgbutton" width="20"><a href="tel:+37477566221">Զանգահարել</a></p>
 </p>
+  <p><input type="image" src="image/gmail.jpg" name="imgbutton" width="20"><a href="mailto:mnatsakanyangor22@gmail.com">Ուղարկել նամակ էլ․ հասցեին</a></p>
+  <p><input type="image" src="image/up.jpg" name="imgbutton" width="20"><a href="#verev">Բարձրանալ վերև</a></p>
+</body>
+</html>
   <p><input type="image" src="image/gmail.jpg" name="imgbutton" width="20"><a href="mailto:mnatsakanyangor22@gmail.com">Ուղարկել նամակ էլ․ հասցեին</a></p>
   <p><input type="image" src="image/up.jpg" name="imgbutton" width="20"><a href="#verev">Բարձրանալ վերև</a></p>
 </body>
