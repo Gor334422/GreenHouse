@@ -4,48 +4,6 @@
   <meta charset="UTF-8">
   <title>Մուտք / Գրանցում</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-  body {
-  background: #f0fff0;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.auth-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-form {
-  margin-bottom: 30px;
-}
-
-input {
-  display: block;
-  width: 90%;
-  margin: 10px auto;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-button {
-  padding: 10px 20px;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #45a049;
-}
-</style>
 </head>
 <body>
   <div class="auth-container">
@@ -66,14 +24,6 @@ button:hover {
       <button type="submit">Գրանցվել</button>
     </form>
   </div>
-  <script>
-  const params = new URLSearchParams(window.location.search);
-  const isLogged = params.get("logged");
-
-  if (isLogged === "true") {
-    console.log("Օգտատերը մուտք է գործել");
-    // Այստեղ կարող ես ցույց տալ հատուկ greeting, կամ թաքնված բովանդակություն
-  }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
