@@ -44,6 +44,21 @@
     }
   </style>
   <style>
+    .login-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.login-link:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+  <style>
     body {
       background-color: #f0fff0;
       font-family: Arial, sans-serif;
@@ -254,28 +269,15 @@
   <div class="logo-text">GreenHouse</div>
 </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const isLogged = params.get("logged");
-
-    if (isLogged === "true") {
-      document.body.innerHTML += "<p>Բարի գալուստ, դու մուտք ես գործել։</p>";
-    } else {
-      document.body.innerHTML += "<p>Դու մուտք չես գործել։</p>";
-    }
-  </script>
   <div class="navbar">
-    <a href="#home" onclick="navigate('home')">Գլխավոր</a>
+    <a href="index.html?home=true">
+  <button>Գլխավոր</button>
+  </a>
     <a href="#about" onclick="navigate('about')">Մեր մասին</a>
     <a href="#contact" onclick="navigate('contact')">Կապ</a>
     <a href="#login" onclick="navigate('login')">Մուտք</a>
   </div>
-
-  <div id="home" class="section">Բարի գալուստ մեր կայք։</div>
-  <div id="about" class="section">Մենք զբաղվում ենք վեբ ծրագրավորմամբ։</div>
-  <div id="contact" class="section">Կապ հաստատելու համար գրեք մեզ։</div>
-  <div id="login" class="section">Մուտք գործելու ձևը դեռ մշակվում է :)</div>
-
+  
   <script>
     function navigate(id) {
       event.preventDefault();
@@ -314,13 +316,14 @@
   </a>
   <h2>Ընտրիր բովանդակությունը</h2>
 <nav>
-  <a href="index.html?logged=true">Գլխավոր</a>
+  <a href="index.html?home=true">
+    <button>Գլխավոր</button>
+  </a>
   <a href="about.html">Մեր մասին</a>
   <a href="contact.html">Կապ</a>
   <a href="blog/index.html">Բլոգ</a>
-  <a href="loading.html?logged=true">
-    <button>Մուտք/գրանցում</button>
-  </a>
+  <a href="loading.html?logged=true" class="login-link">Մուտք/գրանցում</a>
+
 </nav>
 
   <div id="content">
@@ -345,5 +348,14 @@
 </p>
   <p><input type="image" src="image/gmail.jpg" name="imgbutton" width="20"><a href="mailto:mnatsakanyangor22@gmail.com">Ուղարկել նամակ էլ․ հասցեին</a></p>
   <p><input type="image" src="image/up.jpg" name="imgbutton" width="20"><a href="#verev">Բարձրանալ վերև</a></p>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const isLogged = params.get("home");
+
+  if (isLogged === "true") {
+    console.log("Գլխավոր");
+    // Այստեղ կարող ես ցույց տալ հատուկ greeting, կամ թաքնված բովանդակություն
+  }
+  </script>
 </body>
 </html>
